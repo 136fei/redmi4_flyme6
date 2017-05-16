@@ -142,8 +142,6 @@ override_property += \
     ro.flyme.romer=136fei \
     ro.product.model_romer=prada_136fei \
 	ro.product.device=prada \
-    config.disable_atlas=true \
-    persist.adb.notify=0 \
     dalvik.vm.heapgrowthlimit=192m \
     dalvik.vm.heapsize=512m
 
@@ -152,8 +150,8 @@ override_property += \
 # The default value is nothing.
 # You can add the property name in the value from the build.prop.
 #-----------------------------------------------------------------------------
- remove_property += \
-     ro.build.selinux
+# remove_property += \
+#     dev.defaultwallpaper
 
 ##############################################################################
 # Defines whether uses assertions in /META-INF/com/google/android/updater-script of the OTA package.
@@ -181,12 +179,19 @@ USE_ASSERTIONS_IN_UPDATER_SCRIPT := false
 # Will fall back to a file-based OTA if the target_files is older and doesn't support block-based OTAs.
 # Default: true
 #-----------------------------------------------------------------------------
-PRODUCE_BLOCK_BASED_OTA := false
+#PRODUCE_BLOCK_BASED_OTA := false
 
 ##############################################################################
 # Defines whether build an international version of package.
 # Default: false
 #-----------------------------------------------------------------------------
 #PRODUCE_INTERNATIONAL_ROM := true
+ 
+##############################################################################
+# Defines whether use sepolicy inject.
+# Default: true
+#-----------------------------------------------------------------------------
+PRODUCE_SEPOLICY_INJECT := false
+
 
 include $(PORT_BUILD)/main.mk
